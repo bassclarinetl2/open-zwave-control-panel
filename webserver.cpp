@@ -329,7 +329,7 @@ const char *Webserver::SendTopoResponse (struct MHD_Connection *conn, const char
 		}
 	}
 	strncpy(fntemp, "/tmp/ozwcp.topo.XXXXXX", sizeof(fntemp));
-	fn = mktemp(fntemp);
+	fn = mkdtemp(fntemp);
 	if (fn == NULL)
 		return EMPTY;
 	strncat(fntemp, ".xml", sizeof(fntemp));
@@ -457,7 +457,7 @@ const char *Webserver::SendStatResponse (struct MHD_Connection *conn, const char
 		}
 	}
 	strncpy(fntemp, "/tmp/ozwcp.stat.XXXXXX", sizeof(fntemp));
-	fn = mktemp(fntemp);
+	fn = mkdtemp(fntemp);
 	if (fn == NULL)
 		return EMPTY;
 	strncat(fntemp, ".xml", sizeof(fntemp));
@@ -509,7 +509,7 @@ const char *Webserver::SendTestHealResponse (struct MHD_Connection *conn, const 
 	}
 
 	strncpy(fntemp, "/tmp/ozwcp.testheal.XXXXXX", sizeof(fntemp));
-	fn = mktemp(fntemp);
+	fn = mkdtemp(fntemp);
 	if (fn == NULL)
 		return EMPTY;
 	strncat(fntemp, ".xml", sizeof(fntemp));
@@ -623,7 +623,7 @@ const char *Webserver::SendSceneResponse (struct MHD_Connection *conn, const cha
 		}
 	}
 	strncpy(fntemp, "/tmp/ozwcp.scenes.XXXXXX", sizeof(fntemp));
-	fn = mktemp(fntemp);
+	fn = mkdtemp(fntemp);
 	if (fn == NULL)
 		return EMPTY;
 	strncat(fntemp, ".xml", sizeof(fntemp));
@@ -790,7 +790,7 @@ int Webserver::SendPollResponse (struct MHD_Connection *conn)
 	}
 	pthread_mutex_unlock(&nlock);
 	strncpy(fntemp, "/tmp/ozwcp.poll.XXXXXX", sizeof(fntemp));
-	fn = mktemp(fntemp);
+	fn = mkdtemp(fntemp);
 	if (fn == NULL)
 		return MHD_YES;
 	strncat(fntemp, ".xml", sizeof(fntemp));
