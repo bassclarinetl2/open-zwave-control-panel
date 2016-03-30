@@ -33,7 +33,7 @@ git clone https://github.com/OpenZWave/open-zwave-control-panel.git
 ```
 7. Edit the Makefile
 ``` bash
-cd openzwave-control-panel
+cd open-zwave-control-panel
 
 # for Linux uncomment out next two lines
 LIBZWAVE := $(wildcard $(OPENZWAVE)/cpp/lib/linux/*.a)
