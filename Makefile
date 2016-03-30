@@ -21,7 +21,7 @@ DEBUG_LDFLAGS	:= -g
 CFLAGS	:= -c $(DEBUG_CFLAGS)
 LDFLAGS	:= $(DEBUG_LDFLAGS)
 
-OPENZWAVE := ../
+OPENZWAVE := ../openzwave/
 LIBMICROHTTPD := -lmicrohttpd
 
 INCLUDES := -I $(OPENZWAVE)/cpp/src -I $(OPENZWAVE)/cpp/src/command_classes/ \
