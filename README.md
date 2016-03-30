@@ -34,15 +34,7 @@ git clone https://github.com/OpenZWave/open-zwave-control-panel.git
 7. Edit the Makefile
 ``` bash
 cd openzwave-control-panel
-https://github.com/bassclarinetl2/open-zwave-control-panel.git open-zwave-control-panel
-# Choice 2 - clone the original repository and change all instances of the function call mktemp to mkdtemp
-git clone https://github.com/OpenZWave/open-zwave-control-panel.git
-```
-7. Edit the Makefile
-``` bash
-cd openzwave-control-panel
 
-```
 # for Linux uncomment out next two lines
 LIBZWAVE := $(wildcard $(OPENZWAVE)/cpp/lib/linux/*.a)
 LIBUSB := -ludev
@@ -50,7 +42,6 @@ LIBS := $(LIBZWAVE) $(GNUTLS) $(LIBMICROHTTPD) -pthread $(LIBUSB)
 
 # Also alter the path to the (compiled) openzwave folder (OPENZWAVE := ) accordingly (likely ../openzwave/)
 ```
-
 8. Copy over the libopenzwave files we need
 ``` bash
 mkdir cpp/lib/linux
