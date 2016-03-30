@@ -34,34 +34,7 @@ git clone https://github.com/OpenZWave/open-zwave-control-panel.git
 7. Edit the Makefile
 ``` bash
 cd openzwave-control-panel
->>>>>>> c466d9b7c23718996bf62738177d0cd74a46a8be
-
-1. Install Z-Wave  and ensure it is working. Refer to the [Home Assistant Z-Wave component page](https://home-assistant.io/components/zwave/). Make sure that you hang onto the python-openzwave dir
-2. Download the libmicrohttpd library
-``` bash
-cd python-openzwave # The directory you made in step 1
-wget ftp://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.19.tar.gz
-```
-3. Install the libmicrohttpd library
-``` bash
-tar zxvf libmicrohttpd-0.9.19.tar.gz
-mv libmicrohttpd-0.9.19 libmicrohttpd
-cd libmicrohttpd
-./configure && make
-sudo make install
-```
-4. Assuming no errors
-``` bash
-cd ..
-```
-5. Install libraries needed for open-zwave-control-panel
-``` bash
-sudo apt-get install libgnutls28 libgnutlsxx28 libgnutls-dev
-```
-6. Clone the latest control panel
-``` bash
-# Choice 1 - clone this repository which has necessary cod and Makefile changes already applied
-git clone https://github.com/bassclarinetl2/open-zwave-control-panel.git open-zwave-control-panel
+https://github.com/bassclarinetl2/open-zwave-control-panel.git open-zwave-control-panel
 # Choice 2 - clone the original repository and change all instances of the function call mktemp to mkdtemp
 git clone https://github.com/OpenZWave/open-zwave-control-panel.git
 ```
