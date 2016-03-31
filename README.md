@@ -44,7 +44,8 @@ LIBS := $(LIBZWAVE) $(GNUTLS) $(LIBMICROHTTPD) -pthread $(LIBUSB)
 ```
 8. Copy over the libopenzwave files we need
 ``` bash
-mkdir cpp/lib/linux
+cd ../openzwave
+mkdir -p cpp/lib/linux
 cp ./libopenzwave* ./cpp/lib/linux
 ```
 
