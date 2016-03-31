@@ -20,10 +20,15 @@ sudo make install
 ``` bash
 cd ..
 ```
-5. Install libraries needed for open-zwave-control-panel
+5. (WHEEZY) Install libraries needed for open-zwave-control-panel
 ``` bash
 sudo apt-get install libgnutls28 libgnutlsxx28 libgnutls-dev
 ```
+5. (JESSIE) Install libraries needed for open-zwave-control-panel
+``` bash
+sudo apt-get install libgnutls-deb0-28 libgnutlsxx28 libgnutls28-dev
+```
+
 6. Clone the latest control panel
 ``` bash
 # Choice 1 - clone this repository which has necessary cod and Makefile changes already applied
@@ -35,18 +40,23 @@ git clone https://github.com/OpenZWave/open-zwave-control-panel.git
 ``` bash
 cd open-zwave-control-panel
 
+# Toggle comment for JESSIE
+GNUTLS := -lgnutls
+#GNUTLS := -gnutls
+
 # for Linux uncomment out next two lines
 LIBZWAVE := $(wildcard $(OPENZWAVE)/cpp/lib/linux/*.a)
 LIBUSB := -ludev
 LIBS := $(LIBZWAVE) $(GNUTLS) $(LIBMICROHTTPD) -pthread $(LIBUSB)
 
-# Also alter the path to the (compiled) openzwave folder (OPENZWAVE := ) accordingly (likely ../openzwave/)
+# Also alter the path to the (compiled) openzwave folder (OPENZWAVE := ) accordingly (likely ../openzwave)
 ```
 8. Copy over the libopenzwave files we need
 ``` bash
 cd ../openzwave
 mkdir -p cpp/lib/linux
 cp ./libopenzwave* ./cpp/lib/linux
+cd ../open-zwave-control-panel
 ```
 
 9. Compile
@@ -57,7 +67,7 @@ make
 
 10. Link the config directory of our control panel to the libopenzwave one 
 ``` bash
-ln -s /usr/local/share/python-openzwave/config/ config
+ln -s /usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.0b8-py3.4-linux-x86_64.egg/config/ config
 ```
 
 11. Ensuring that HASS isn't running (crossing the streams would be very bad), run  the control panel
