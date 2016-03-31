@@ -67,7 +67,11 @@ make
 
 - Link the config directory of our control panel to the libopenzwave one 
 ``` bash
+# For custom packaged installs of OZW
 ln -s /usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.0b8-py3.4-linux-x86_64.egg/config/ config
+# For directly installed versions of OZW
+ln -s /usr/local/share/python-openzwave/config
+
 ```
 
 - Ensuring that HASS isn't running (crossing the streams would be very bad), run  the control panel
